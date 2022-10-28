@@ -1,0 +1,24 @@
+form {
+  border: 3px solid #f1f1f1;
+}
+.container {
+  position: absolute;
+  top: 30px;
+  margin: 20px;
+  max-width: 300px;
+  padding: 16px;
+  background-color: white;
+}
+input[type="username"],
+input[type="password"] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+input[type="username"]:focus,
+input[type="password"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
