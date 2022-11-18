@@ -2,8 +2,8 @@ form {
   border: 3px solid #f1f1f1;
 }
 .container {
-  position: absolute;
-  top: 30px;
+  position: relative;
+  top: 50px;
   margin: 20px;
   max-width: 300px;
   padding: 16px;
@@ -11,7 +11,7 @@ form {
 }
 input[type="username"],
 input[type="password"] {
-  width: 100%;
+  width: 90%;
   padding: 15px;
   margin: 5px 0 22px 0;
   border: none;
