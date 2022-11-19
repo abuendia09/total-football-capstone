@@ -1,5 +1,5 @@
-import React from "react";
-
+//styles
+import "./Teams.css";
 export default function Teams() {
   return (
     <div>
