@@ -29,7 +29,7 @@ h4 {
 ul {
   list-style-type: none;
 }
-/* lay out */
+/* layout */
 .page-title {
   font-size: 1em;
   color: var(--heading-color);
@@ -52,7 +52,7 @@ ul {
 /* forms */
 label {
   display: block;
-  margin-bottom: 24px auto;
+  margin-bottom: 24px;
 }
 label span {
   display: block;

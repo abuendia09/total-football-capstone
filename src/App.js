@@ -1,33 +1,31 @@
 //Imports
-import { Route, Routes } from "react-router-dom";
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+
+//pages & components
+import Home from "./components/Home/Home";
+import Login from "./components/Login/Login";
+import Register from "./components/Register/Register";
+import Teams from "./components/Teams/Teams";
+import Players from "./components/Players/Players";
+import Create from "./components/Create/Create";
 
 //styles
 import "./App.css";
 
-//Components
-import Register from "./components/Register/Register";
-import Navbar from "./components/Navbar/Navbar";
-
 function App() {
   return (
-    <main className="app">
-      <Navbar />
+    <div className="App">
       <Routes>
-        <Route path="login"></Route>
-        <Route path="register" element={<Register />} />
+        <Route exact path="/" element={<Home />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/teams" element={<Teams />} />
+        <Route path="/players" element={<Players />} />
+        <Route path="/create" element={<Create />} />
       </Routes>
-    </main>
+    </div>
   );
 }
 
 export default App;
-
-/* pages I need
-
--- homepage(about)
--- login
--- register
--- create teams
--- players and description
-
-*/

@@ -1,0 +1,15 @@
+.player-container {
+  display: flex;
+}
+.player-content-title {
+  flex-grow: 1;
+  padding: 0 60px;
+}
+.player-grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+  justify-items: center;
+}

@@ -1,0 +1,7 @@
+.create-container {
+  display: flex;
+}
+.create-content-title {
+  flex-grow: 1;
+  padding: 0 60px;
+}

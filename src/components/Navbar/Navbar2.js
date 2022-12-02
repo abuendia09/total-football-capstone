@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 import Logo from "../../assets/soccerBall.svg";
 
-export default function Navbar() {
+export default function Navbar2() {
   return (
     <nav className="navbar">
       <ul>
@@ -13,10 +13,7 @@ export default function Navbar() {
           <span>Total Football</span>
         </li>
         <li>
-          <Link to="/login">Login</Link>
-        </li>
-        <li>
-          <Link to="/register">Register</Link>
+          <button className="btn">Logout</button>
         </li>
       </ul>
     </nav>
