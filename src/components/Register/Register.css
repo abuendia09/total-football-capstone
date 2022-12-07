@@ -1,4 +1,4 @@
-.auth-form {
+.register-form {
   max-width: 360px;
   margin: 60px auto;
   padding: 40px;
@@ -7,6 +7,40 @@
   background: #fff;
 }
 
-.auth-form h2 {
+.register-form h2 {
   margin-bottom: 24px;
+}
+.register-form label {
+  display: block;
+  margin-bottom: 24px;
+}
+.register-form label span {
+  display: block;
+  margin-bottom: 6px;
+}
+.register-form input,
+textarea {
+  padding: 8px 6px;
+  font-size: 1em;
+  color: #777;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.register-form textarea {
+  min-height: 160px;
+}
+.register-btn {
+  background: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  color: var(--primary-color);
+  font-size: 1em;
+  cursor: pointer;
+  border: 1px solid var(--primary-color);
+}
+.register-btn:hover {
+  background-color: var(--primary-color);
+  color: #fff;
 }

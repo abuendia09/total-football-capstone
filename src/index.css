@@ -16,61 +16,6 @@ body {
   background-color: var(--bg-color);
 }
 
-ul,
-li,
-p,
-h1,
-h2,
-h3,
-h4 {
-  margin: 0;
-  padding: 0;
-}
-ul {
-  list-style-type: none;
-}
-/* layout */
-.page-title {
-  font-size: 1em;
-  color: var(--heading-color);
-  display: inline-block;
-}
-.btn {
-  background: #fff;
-  padding: 8px 12px;
-  border-radius: 4px;
-  color: var(--primary-color);
-  font-size: 1em;
-  cursor: pointer;
-  border: 1px solid var(--primary-color);
-}
-.btn:hover {
-  background-color: var(--primary-color);
-  color: #fff;
-}
-
-/* forms */
-label {
-  display: block;
-  margin-bottom: 24px;
-}
-label span {
-  display: block;
-  margin-bottom: 6px;
-}
-input,
-textarea {
-  padding: 8px 6px;
-  font-size: 1em;
-  color: #777;
-  width: 100%;
-  box-sizing: border-box;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-textarea {
-  min-height: 160px;
-}
 .error {
   color: red;
   background-color: black;

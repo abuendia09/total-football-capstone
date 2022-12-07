@@ -2,6 +2,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../Navbar/Navbar";
 
 //styles
 import "./Register.css";
@@ -22,6 +23,7 @@ export default function Register() {
       )
       .then((res) => {
         console.log(res.data);
+        alert("user has been registered");
         navigate("/login");
       })
       .catch((error) => {
@@ -30,29 +32,32 @@ export default function Register() {
   };
 
   return (
-    <form className="auth-form" onSubmit={handleSubmit}>
-      <h2>Register</h2>
-      <label>
-        <span>Username:</span>
-        <input
-          type="text"
-          required
-          onChange={(e) => setUsername(e.target.value)}
-          value={username}
-          autoComplete="on"
-        />
-      </label>
-      <label>
-        <span>Password:</span>
-        <input
-          type="password"
-          required
-          onChange={(e) => setPassword(e.target.value)}
-          value={password}
-          autoComplete="on"
-        />
-      </label>
-      <button className="btn">Sign Up</button>
-    </form>
+    <div>
+      <Navbar />
+      <form className="register-form" onSubmit={handleSubmit}>
+        <h2>Register</h2>
+        <label>
+          <span>Username:</span>
+          <input
+            type="text"
+            required
+            onChange={(e) => setUsername(e.target.value)}
+            value={username}
+            autoComplete="on"
+          />
+        </label>
+        <label>
+          <span>Password:</span>
+          <input
+            type="password"
+            required
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
+            autoComplete="on"
+          />
+        </label>
+        <button className="register-btn">Sign Up</button>
+      </form>
+    </div>
   );
 }

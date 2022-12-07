@@ -26,8 +26,8 @@ app.use(
     secret: SESSION_SECRET,
     cookie: {
       maxAge: 1000 * 60 * 60 * 60 * 7,
-      sameSite: "lax",
-      secure: false,
+      sameSite: "none",
+      secure: true,
     },
   })
 );
@@ -50,6 +50,12 @@ sequelize.authenticate().then(() => {
 
   app.post("/register", async (req, res) => {
     const { username, password } = req.body;
+    // const existingUser = await sequelize.query(
+    //   `SELECT * FROM users WHERE username = '${username}'`
+    // );
+    // if (existingUser[0]) {
+    //   return res.status(409).send("username is already taken");
+    // } else {
     const newUser = await sequelize.query(
       `INSERT INTO users (username, password)
       VALUES ('${username}', '${password}');`
@@ -59,6 +65,7 @@ sequelize.authenticate().then(() => {
       username: newUser[0].username,
     };
     res.status(200).send(req.session.user);
+    // }
   });
 
   //User login
@@ -84,20 +91,17 @@ sequelize.authenticate().then(() => {
     }
   });
 
-  // get all players
-  app.get("/players", async (req, res) => {
-    const allPlayers = await sequelize.query("SELECT * FROM players;");
-    res.status(200).send(allPlayers[0]);
+  //USER LOGOUT
+
+  app.delete("/logout", (req, res) => {
+    req.session.destroy();
+    res.sendStatus(200);
   });
 
-  // get a player for the team
-  app.get("/create", async (req, res) => {
-    const { position } = req.body;
-
-    const onePlayer = await sequelize.query(
-      `SELECT * FROM players WHERE player_position = '${position}'`
-    );
-    res.status(200).send(onePlayer);
+  // get all players
+  app.get("/players", async (req, res) => {
+    const allPlayers = await sequelize.query(`SELECT * FROM players;`);
+    res.status(200).send(allPlayers[0]);
   });
 
   // APP LISTEN

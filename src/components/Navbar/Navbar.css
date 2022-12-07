@@ -10,7 +10,9 @@
   margin: 0 auto;
   align-items: center;
   justify-content: flex-end;
+  list-style-type: none;
 }
+
 .navbar .logo {
   font-weight: bold;
   color: var(--heading-color);
@@ -29,4 +31,17 @@
   color: #333;
   text-decoration: none;
   margin-right: 20px;
+}
+.logout-btn {
+  background: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  color: var(--primary-color);
+  font-size: 1em;
+  cursor: pointer;
+  border: 1px solid var(--primary-color);
+}
+.logout-btn:hover {
+  background-color: var(--primary-color);
+  color: #fff;
 }

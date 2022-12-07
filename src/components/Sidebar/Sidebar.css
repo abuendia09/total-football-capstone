@@ -7,8 +7,21 @@
   position: relative;
   color: #fff;
 }
+.sidebar li,
+ul,
+p,
+h1,
+h2,
+h3,
+h4 {
+  padding: 0;
+  margin: 0;
+}
+.sidebar ul {
+  list-style-type: none;
+}
 .sidebar-content {
-  position: fixed;
+  position: absolute;
   width: inherit;
 }
 .sidebar .username {

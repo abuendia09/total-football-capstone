@@ -1,7 +1,110 @@
 .create-container {
   display: flex;
 }
-.create-content-title {
+.navbar-content {
   flex-grow: 1;
   padding: 0 60px;
+}
+.create-title {
+  padding-bottom: 20px;
+  letter-spacing: 0.05em;
+  color: #777;
+}
+.create-header {
+  padding-bottom: 20px;
+}
+.create-paragraph {
+  padding-bottom: 20px;
+}
+.create-form span {
+  color: #777;
+  padding-right: 10px;
+}
+.create-form input,
+textarea {
+  padding: 8px 6px;
+  font-size: 1em;
+  color: #777;
+  box-sizing: border-box;
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+}
+.create-form input:focus {
+  outline: none;
+  border: 2px solid var(--primary-color);
+  box-shadow: 0 0 10px var(--highlight-color);
+}
+.field-content {
+  padding-top: 30px;
+}
+.player-gk {
+  position: relative;
+  top: -50px;
+  left: 185px;
+}
+.player-rb {
+  position: relative;
+  top: -210px;
+  left: 30px;
+}
+.player-lcb {
+  position: relative;
+  top: -175px;
+  left: 120px;
+}
+.player-rcb {
+  position: relative;
+  top: -196.5px;
+  left: 240px;
+}
+.player-lb {
+  position: relative;
+  top: -275px;
+  left: 320px;
+}
+.player-lcm {
+  position: relative;
+  top: -415px;
+  left: 100px;
+}
+.player-rcm {
+  position: relative;
+  top: -437px;
+  left: 250px;
+}
+.player-cam {
+  position: relative;
+  top: -550px;
+  left: 165px;
+}
+.player-lw {
+  position: relative;
+  top: -640px;
+  left: 30px;
+}
+.player-rw {
+  position: relative;
+  top: -662px;
+  left: 300px;
+}
+.player-st {
+  position: relative;
+  top: -760px;
+  left: 170px;
+}
+.create-btn {
+  position: relative;
+  top: -210px;
+  left: 120px;
+  background: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  color: var(--primary-color);
+  font-size: 1em;
+  cursor: pointer;
+  border: 1px solid var(--primary-color);
+}
+.create-btn:hover {
+  background-color: var(--primary-color);
+  color: #fff;
 }
