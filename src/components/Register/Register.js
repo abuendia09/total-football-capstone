@@ -2,7 +2,10 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+
+//components
 import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer";
 
 //styles
 import "./Register.css";
@@ -32,7 +35,7 @@ export default function Register() {
   };
 
   return (
-    <div>
+    <div className="register-container">
       <Navbar />
       <form className="register-form" onSubmit={handleSubmit}>
         <h2>Register</h2>
@@ -58,6 +61,7 @@ export default function Register() {
         </label>
         <button className="register-btn">Sign Up</button>
       </form>
+      <Footer />
     </div>
   );
 }

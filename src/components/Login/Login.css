@@ -1,9 +1,13 @@
+.login-container {
+  background-color: var(--bg-color);
+  border: 2px solid var(--highlight-color);
+}
 .login-form {
   max-width: 360px;
   margin: 60px auto;
   padding: 40px;
   border: 1px solid #ddd;
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.05);
+  box-shadow: 3px 3px 5px var(--highlight-color);
   background: #fff;
 }
 
@@ -25,8 +29,13 @@ textarea {
   color: #777;
   width: 100%;
   box-sizing: border-box;
-  border: 1px solid #ddd;
+  border: 1px solid var(--primary-color);
   border-radius: 4px;
+}
+.login-form input:focus {
+  outline: none;
+  border: 2px solid var(--primary-color);
+  box-shadow: 0 0 10px var(--highlight-color);
 }
 .login-form textarea {
   min-height: 160px;

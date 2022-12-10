@@ -47,7 +47,7 @@ sequelize.authenticate().then(() => {
   });
 
   //ENDPOINTS
-
+  //register a user
   app.post("/register", async (req, res) => {
     const { username, password } = req.body;
     // const existingUser = await sequelize.query(
@@ -95,15 +95,96 @@ sequelize.authenticate().then(() => {
 
   app.delete("/logout", (req, res) => {
     req.session.destroy();
-    res.sendStatus(200);
+    res.send(200).status("user is logged out");
   });
 
-  // get all players
+  // get players
   app.get("/players", async (req, res) => {
     const allPlayers = await sequelize.query(`SELECT * FROM players;`);
     res.status(200).send(allPlayers[0]);
   });
-
+  app.get("/goalkeeper", async (req, res) => {
+    const goalkeeper = await sequelize.query(
+      `SELECT first_name FROM players WHERE player_position = 'GK';`
+    );
+    res.status(200).send(goalkeeper[0]);
+    console.log(goalkeeper[0]);
+  });
+  app.get("/rightback", async (req, res) => {
+    const rightback = await sequelize.query(
+      `SELECT first_name FROM players WHERE player_position = 'RB';`
+    );
+    res.status(200).send(rightback[0]);
+    console.log(rightback[0]);
+  });
+  app.get("/leftback", async (req, res) => {
+    const leftback = await sequelize.query(
+      `SELECT first_name FROM players WHERE player_position = 'LB';`
+    );
+    res.status(200).send(leftback[0]);
+    console.log(leftback[0]);
+  });
+  app.get("/leftcb", async (req, res) => {
+    const leftCb = await sequelize.query(
+      `SELECT first_name FROM players WHERE player_position = 'LCB';`
+    );
+    res.status(200).send(leftCb[0]);
+    console.log(leftCb[0]);
+  });
+  app.get("/rightcb", async (req, res) => {
+    const rightCb = await sequelize.query(
+      `SELECT first_name FROM players WHERE player_position = 'RCB';`
+    );
+    res.status(200).send(rightCb[0]);
+    console.log(rightCb[0]);
+  });
+  app.get("/leftcm", async (req, res) => {
+    const leftCm = await sequelize.query(
+      `SELECT first_name FROM players WHERE player_position = 'LCM';`
+    );
+    res.status(200).send(leftCm[0]);
+    console.log(leftCm[0]);
+  });
+  app.get("/rightcm", async (req, res) => {
+    const rightCm = await sequelize.query(
+      `SELECT first_name FROM players WHERE player_position = 'RCM';`
+    );
+    res.status(200).send(rightCm[0]);
+    console.log(rightCm[0]);
+  });
+  app.get("/cam", async (req, res) => {
+    const cam = await sequelize.query(
+      `SELECT first_name FROM players WHERE player_position = 'CAM';`
+    );
+    res.status(200).send(cam[0]);
+    console.log(cam[0]);
+  });
+  app.get("/leftwing", async (req, res) => {
+    const leftWing = await sequelize.query(
+      `SELECT first_name FROM players WHERE player_position = 'LW';`
+    );
+    res.status(200).send(leftWing[0]);
+    console.log(leftWing[0]);
+  });
+  app.get("/rightwing", async (req, res) => {
+    const rightWing = await sequelize.query(
+      `SELECT first_name FROM players WHERE player_position = 'RW';`
+    );
+    res.status(200).send(rightWing[0]);
+    console.log(rightWing[0]);
+  });
+  app.get("/striker", async (req, res) => {
+    const striker = await sequelize.query(
+      `SELECT first_name FROM players WHERE player_position = 'ST';`
+    );
+    res.status(200).send(striker[0]);
+    console.log(striker[0]);
+  });
+  // post the team
+  app.post("/create", async (req, res) => {
+    // const {teamName, goalkeeper, leftCb, rightCb, leftback, rightback, leftCm, rightCm, }
+    const newTeam = await sequelize.query(`INSERT INTO teams`);
+  });
   // APP LISTEN
   app.listen(SERVER_PORT, () =>
     console.log(`Server is listening on ${SERVER_PORT}`)

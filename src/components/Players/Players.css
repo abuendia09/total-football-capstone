@@ -1,9 +1,17 @@
 .player-container {
   display: flex;
 }
-.player-content-title {
+.navbar-content {
   flex-grow: 1;
   padding: 0 60px;
+}
+.player-content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 .player-grid {
   margin-top: 25px;

@@ -21,7 +21,7 @@ h4 {
   list-style-type: none;
 }
 .sidebar-content {
-  position: absolute;
+  position: fixed;
   width: inherit;
 }
 .sidebar .username {
@@ -52,6 +52,6 @@ h4 {
 }
 .sidebar .links a.active {
   color: #555;
-  background: var(--bg-color);
+  background: var(--highlight-color);
   border-radius: 20px 0 0 20px;
 }

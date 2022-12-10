@@ -1,0 +1,24 @@
+.home-container {
+  background-color: var(--bg-color);
+  border: 2px solid var(--highlight-color);
+}
+.home-content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+}
+.home-title-content {
+  color: var(--primary-color);
+  font-size: 45px;
+}
+.paragraph-content {
+  color: var(--text-color);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 42em;
+  padding: 15px;
+}

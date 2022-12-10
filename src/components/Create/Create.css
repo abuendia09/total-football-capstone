@@ -5,6 +5,13 @@
   flex-grow: 1;
   padding: 0 60px;
 }
+.create-content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
 .create-title {
   padding-bottom: 20px;
   letter-spacing: 0.05em;
@@ -15,6 +22,7 @@
 }
 .create-paragraph {
   padding-bottom: 20px;
+  text-align: center;
 }
 .create-form span {
   color: #777;
@@ -37,10 +45,20 @@ textarea {
 .field-content {
   padding-top: 30px;
 }
+.field-content select {
+  border-radius: 20px;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+.field-content select:focus {
+  outline: none;
+  border: 2px solid var(--primary-color);
+}
+
 .player-gk {
   position: relative;
   top: -50px;
-  left: 185px;
+  left: 165px;
 }
 .player-rb {
   position: relative;
@@ -50,7 +68,7 @@ textarea {
 .player-lcb {
   position: relative;
   top: -175px;
-  left: 120px;
+  left: 100px;
 }
 .player-rcb {
   position: relative;
@@ -60,12 +78,12 @@ textarea {
 .player-lb {
   position: relative;
   top: -275px;
-  left: 320px;
+  left: 280px;
 }
 .player-lcm {
   position: relative;
   top: -415px;
-  left: 100px;
+  left: 70px;
 }
 .player-rcm {
   position: relative;
@@ -85,7 +103,7 @@ textarea {
 .player-rw {
   position: relative;
   top: -662px;
-  left: 300px;
+  left: 280px;
 }
 .player-st {
   position: relative;
@@ -107,4 +125,8 @@ textarea {
 .create-btn:hover {
   background-color: var(--primary-color);
   color: #fff;
+}
+
+option {
+  border-radius: 4px;
 }

@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 //components
 import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer";
 //styles
 import "./Login.css";
 
@@ -16,11 +17,7 @@ export default function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post(
-        "http://localhost:4567/login",
-        { username, password },
-        { withCredentials: true }
-      )
+      .post("/login", { username, password }, { withCredentials: true })
       .then((res) => {
         console.log(res);
         navigate("/create");
@@ -32,7 +29,7 @@ export default function Login() {
   };
 
   return (
-    <div>
+    <div className="login-container">
       <Navbar />
       <form className="login-form" onSubmit={handleSubmit}>
         <h2>Login</h2>
@@ -58,6 +55,7 @@ export default function Login() {
         </label>
         <button className="login-btn">Login</button>
       </form>
+      <Footer />
     </div>
   );
 }
