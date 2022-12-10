@@ -179,7 +179,7 @@ export default function Create() {
               First enter your team name and then choose your players.
             </p>
           </div>
-          <form className="create-form">
+          <form className="create-form" onSubmit={handleSubmit}>
             <div>
               <label>
                 <span>Team Name:</span>

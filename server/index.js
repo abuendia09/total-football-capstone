@@ -181,10 +181,10 @@ sequelize.authenticate().then(() => {
     console.log(striker[0]);
   });
   // post the team
-  app.post("/create", async (req, res) => {
-    // const {teamName, goalkeeper, leftCb, rightCb, leftback, rightback, leftCm, rightCm, }
-    const newTeam = await sequelize.query(`INSERT INTO teams`);
-  });
+  // app.post("/create", async (req, res) => {
+  //   // const {teamName, goalkeeper, leftCb, rightCb, leftback, rightback, leftCm, rightCm, }
+  //   const newTeam = await sequelize.query(`INSERT INTO teams`);
+  // });
   // APP LISTEN
   app.listen(SERVER_PORT, () =>
     console.log(`Server is listening on ${SERVER_PORT}`)
