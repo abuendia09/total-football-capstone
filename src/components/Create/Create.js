@@ -30,7 +30,7 @@ export default function Create() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("/create")
+      .post("/create", { teamName })
       .then((res) => {
         console.log(res);
         navigate("/teams");

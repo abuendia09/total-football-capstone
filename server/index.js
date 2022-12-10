@@ -181,10 +181,18 @@ sequelize.authenticate().then(() => {
     console.log(striker[0]);
   });
   // post the team
-  // app.post("/create", async (req, res) => {
-  //   // const {teamName, goalkeeper, leftCb, rightCb, leftback, rightback, leftCm, rightCm, }
-  //   const newTeam = await sequelize.query(`INSERT INTO teams`);
-  // });
+  app.post("/create", async (req, res) => {
+    const { teamName } = req.body;
+    const newTeam = await sequelize.query(
+      `INSERT INTO teams (team_name) VALUES ('${teamName}')`
+    );
+    res.status(200).send(newTeam[0]);
+  });
+  // get team
+  app.get("/teams", async (req, res) => {
+    const allTeams = await sequelize.query(`SELECT * FROM teams;`);
+    res.status(200).send(allTeams[0]);
+  });
   // APP LISTEN
   app.listen(SERVER_PORT, () =>
     console.log(`Server is listening on ${SERVER_PORT}`)
