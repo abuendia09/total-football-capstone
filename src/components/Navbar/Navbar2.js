@@ -12,7 +12,7 @@ export default function Navbar2() {
     e.preventDefault();
     axios.delete("/logout").then((res) => {
       sessionStorage.removeItem("username");
-      sessionStorage.removeItem("password");
+      sessionStorage.removeItem("id");
       alert("you have been logged out");
       navigate("/");
     });
