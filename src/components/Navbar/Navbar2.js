@@ -11,6 +11,8 @@ export default function Navbar2() {
   const handleClick = (e) => {
     e.preventDefault();
     axios.delete("/logout").then((res) => {
+      sessionStorage.removeItem("username");
+      sessionStorage.removeItem("password");
       alert("you have been logged out");
       navigate("/");
     });

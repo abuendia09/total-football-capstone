@@ -9,12 +9,7 @@ const app = express();
 
 //Middleware
 app.use(express.json());
-app.use(
-  cors({
-    origin: ["http://localhost:3000", "http://localhost:4567"],
-    credentials: true,
-  })
-);
+app.use(cors());
 
 //CONNECTION TO SERVER, DATABASE AND USER SESSION
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
@@ -22,7 +17,7 @@ const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
 app.use(
   session({
     resave: false,
-    saveUninitialized: false,
+    saveUninitialized: true,
     secret: SESSION_SECRET,
     cookie: {
       maxAge: 1000 * 60 * 60 * 60 * 7,
@@ -73,10 +68,10 @@ sequelize.authenticate().then(() => {
     const { username, password } = req.body;
 
     const user = await sequelize.query(
-      `SELECT * FROM users WHERE username = '${username}' AND password = '${password}'`
+      `SELECT * FROM users WHERE username = '${username}'`
     );
-    console.log(user);
-    if (!user) {
+    console.log(user[0][0]);
+    if (!user[0][0]) {
       return res.status(400).send("user does not exist");
     } else {
       if (user[0][0].password == password) {

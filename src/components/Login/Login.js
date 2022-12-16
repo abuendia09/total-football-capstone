@@ -20,11 +20,13 @@ export default function Login() {
       .post("/login", { username, password })
       .then((res) => {
         console.log(res.data);
+        sessionStorage.setItem("username", res.data.username);
+        sessionStorage.setItem("id", res.data.id);
         navigate("/create");
         alert("user has been logged in");
       })
       .catch((error) => {
-        alert(error, "User could not be registered.");
+        alert(error.response.request.response);
       });
   };
 
