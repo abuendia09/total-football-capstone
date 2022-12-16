@@ -75,18 +75,18 @@ sequelize.authenticate().then(() => {
     const user = await sequelize.query(
       `SELECT * FROM users WHERE username = '${username}' AND password = '${password}'`
     );
+    console.log(user);
     if (!user) {
       return res.status(400).send("user does not exist");
     } else {
-      const authenticated = user;
-      if (authenticated) {
+      if (user[0][0].password == password) {
         req.session.user = {
-          id: user[0].id,
-          username: user[0].username,
+          id: user[0][0].id,
+          username: user[0][0].username,
         };
         res.status(200).send(req.session.user);
       } else {
-        res.status(403).send("username or password is incorrect");
+        res.status(403).send("password is incorrect");
       }
     }
   });
@@ -95,7 +95,7 @@ sequelize.authenticate().then(() => {
 
   app.delete("/logout", (req, res) => {
     req.session.destroy();
-    res.send(200).status("user is logged out");
+    res.status(200).send("user is logged out");
   });
 
   // get players

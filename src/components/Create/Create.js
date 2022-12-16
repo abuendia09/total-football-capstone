@@ -41,127 +41,98 @@ export default function Create() {
       });
   };
 
+  // useEffect to GET players for each position
   useEffect(() => {
     axios
       .get("/goalkeeper")
       .then((res) => {
         setGoalkeeper(res.data);
-        console.log(res.data);
       })
       .catch((err) => {
         console.log(err);
       });
-  }, []);
-  useEffect(() => {
-    axios
-      .get("/rightback")
-      .then((res) => {
-        setRightback(res.data);
-        console.log(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-  useEffect(() => {
-    axios
-      .get("/leftback")
-      .then((res) => {
-        setLeftback(res.data);
-        console.log(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-  useEffect(() => {
-    axios
-      .get("/leftcb")
-      .then((res) => {
-        setLeftCb(res.data);
-        console.log(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-  useEffect(() => {
-    axios
-      .get("/rightcb")
-      .then((res) => {
-        setRightCb(res.data);
-        console.log(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-  useEffect(() => {
-    axios
-      .get("/rightcm")
-      .then((res) => {
-        setRightCm(res.data);
-        console.log(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-  useEffect(() => {
-    axios
-      .get("/leftcm")
-      .then((res) => {
-        setLeftCm(res.data);
-        console.log(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-  useEffect(() => {
-    axios
-      .get("/cam")
-      .then((res) => {
-        setCam(res.data);
-        console.log(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-  useEffect(() => {
-    axios
-      .get("/leftwing")
-      .then((res) => {
-        setLeftwing(res.data);
-        console.log(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-  useEffect(() => {
     axios
       .get("/rightwing")
       .then((res) => {
         setRightwing(res.data);
-        console.log(res.data);
       })
       .catch((err) => {
         console.log(err);
       });
-  }, []);
-  useEffect(() => {
     axios
       .get("/striker")
       .then((res) => {
         setStriker(res.data);
-        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    axios
+      .get("/rightback")
+      .then((res) => {
+        setRightback(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    axios
+      .get("/leftback")
+      .then((res) => {
+        setLeftback(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    axios
+      .get("/leftcb")
+      .then((res) => {
+        setLeftCb(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    axios
+      .get("/rightcb")
+      .then((res) => {
+        setRightCb(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    axios
+      .get("/rightcm")
+      .then((res) => {
+        setRightCm(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    axios
+      .get("/leftcm")
+      .then((res) => {
+        setLeftCm(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    axios
+      .get("/cam")
+      .then((res) => {
+        setCam(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    axios
+      .get("/leftwing")
+      .then((res) => {
+        setLeftwing(res.data);
       })
       .catch((err) => {
         console.log(err);
       });
   }, []);
+
   const onOptionChangeHandler = (event) => {
     console.log("user Selected -", event.target.value);
   };

@@ -17,9 +17,9 @@ export default function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("/login", { username, password }, { withCredentials: true })
+      .post("/login", { username, password })
       .then((res) => {
-        console.log(res);
+        console.log(res.data);
         navigate("/create");
         alert("user has been logged in");
       })
